@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Pruebas de login</title>
+</head>
+<body>
+    <h1>Bienvenido, {{ session.usuario }}!!</h1>
+    <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+    {% if session.admin %}
+        <h2>Admin panel</h2>
+        <p>Acá debería estar el admin panel</p>
+    {% else %}
+        <p>No sos admin</p>
+    {% endif %}
+</body>
+</html>
