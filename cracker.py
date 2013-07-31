@@ -72,10 +72,13 @@ def dumps(secret_key, obj):
     return serializer.dumps(obj)
 
 def main():
+    if not len(sys.argv) == 3:
+        print 'Uso: ./%s <wordlist_file> <cookie_value>'
+        sys.exit()
     inicio = time.time()
-    wordlist = open(sys.argv[1]).readlines()
+    wordlist_file, cookie = sys.argv[1:]
+    wordlist = open(wordlist_file).readlines()
     wordlist = [w.strip() for w in wordlist]
-    cookie = raw_input('Cookie: ')
     secret_key = thread_crack(cookie, wordlist, threads)
     if secret_key:
         print 'Crackedo. Clave:', secret_key
