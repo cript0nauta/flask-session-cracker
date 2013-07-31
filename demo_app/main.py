@@ -8,7 +8,7 @@ app.secret_key='bigsecret'
 
 users = [
         ('guest', 'guest', False),
-        ('admin', 'topsecret', True),
+        ('admin', 'd5f4sd56f4sd56f54f56sd7f89sd7fsd2g14gf5hjg6f', True),
         ]
 
 @app.route('/')
